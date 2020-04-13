@@ -19,18 +19,23 @@ function App() {
 
   return (
     <div className="App">
+      <div className="App-header">
       <h1>Todos with Reducers</h1>
       <form onSubmit={handleSubmit}>
-        <input
+        <input className="addInput"
           type="text"
           name="todo"
           value={todo}
           onChange={handleChange}
           placeholder="What do you need to do?"
         />
-        <button type="submit">Add One</button>
+        <button className="addBtn" type="submit">ADD IT</button>
       </form>
-
+      <div className="buttonDiv">
+          
+          <button className="clear-btn" onClick={() => dispatch({ type: "clear-todos" })}>Clear Them</button>
+        </div>
+    </div>
       
       <div className="card-container">
         {state.todos.map(todo => (
@@ -38,15 +43,13 @@ function App() {
             key={todo.id}
             onClick={() => dispatch({ type: "toggle-todos", payload: todo })}
           >
-            <p>{todo.item}</p>
-            <p>Finished? {todo.completed ? "All Done" : "Not quite"}</p>
+            <p className="p1">{todo.item}</p>
+            <p className="p2">{todo.completed ? "Done" : "Do"}</p>
           </Card>
         ))}
       </div>
 
-      <button onClick={() => dispatch({ type: "clear-todos" })}>
-        Get them out of my sight
-      </button>
+      
     </div>
   );
 }

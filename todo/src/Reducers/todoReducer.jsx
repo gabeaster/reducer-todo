@@ -1,6 +1,6 @@
 export const initialState = {
   todos: [
-    { item: "Learn Redux", completed: false, id: 3892987590 },
+    { item: "Read Tomorrow's TK", completed: false, id: 3892987590 },
   ]
 };
 
@@ -38,3 +38,4 @@ export const todoReducer = (state, action) => {
       return state;
   }
 };
+
